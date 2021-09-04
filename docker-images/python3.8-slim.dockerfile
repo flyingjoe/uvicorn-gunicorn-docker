@@ -2,6 +2,8 @@ FROM python:3.8-slim
 
 LABEL maintainer="Sebastian Ramirez <tiangolo@gmail.com>"
 
+RUN apt install -y gcc
+
 RUN pip install --no-cache-dir "uvicorn[standard]" gunicorn
 
 COPY ./start.sh /start.sh
