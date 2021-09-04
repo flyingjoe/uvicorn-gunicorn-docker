@@ -13,7 +13,7 @@ if [ "$NAME" == "latest" ] ; then
 fi
 
 docker buildx build \
-    --platform linux/amd64,linux/arm/v5,linux/arm/v7,linux/arm64/v8 \
+    --platform linux/amd64,linux/arm/v7,linux/arm64/v8 \
     -t "$use_tag" docker-images/ \
     -f docker-images/$DOCKERFILE.dockerfile \
     --push
