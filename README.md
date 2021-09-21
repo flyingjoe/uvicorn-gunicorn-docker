@@ -2,15 +2,18 @@
 
 ## Supported tags and respective `Dockerfile` links
 
-* [`python3.8`, `latest` _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.8.dockerfile)
+* [`python3.9`, `latest` _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.9.dockerfile)
+* [`python3.8`, _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.8.dockerfile)
 * [`python3.7`, _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.7.dockerfile)
 * [`python3.6` _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.6.dockerfile)
+* [`python3.9-slim` _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.9-slim.dockerfile)
 * [`python3.8-slim` _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.8-slim.dockerfile)
+* [`python3.9-alpine3.14` _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.9-alpine3.14.dockerfile)
 * [`python3.8-alpine3.10` _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.8-alpine3.10.dockerfile)
 * [`python3.7-alpine3.8` _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.7-alpine3.8.dockerfile)
 * [`python3.6-alpine3.8` _(Dockerfile)_](https://github.com/tiangolo/uvicorn-gunicorn-docker/blob/master/docker-images/python3.6-alpine3.8.dockerfile)
 
-**Note**: Note: There are [tags for each build date](https://hub.docker.com/r/tiangolo/uvicorn-gunicorn/tags). If you need to "pin" the Docker image version you use, you can select one of those tags. E.g. `tiangolo/uvicorn-gunicorn:python3.7-2019-10-15`.
+**Note**: There are [tags for each build date](https://hub.docker.com/r/tiangolo/uvicorn-gunicorn/tags). If you need to "pin" the Docker image version you use, you can select one of those tags. E.g. `tiangolo/uvicorn-gunicorn:python3.7-2019-10-15`.
 
 # uvicorn-gunicorn
 
@@ -72,7 +75,7 @@ If you are creating a new [**FastAPI**](https://fastapi.tiangolo.com/) web appli
 * You don't need to clone the GitHub repo. You can use this image as a base image for other images, using this in your `Dockerfile`:
 
 ```Dockerfile
-FROM tiangolo/uvicorn-gunicorn:python3.7
+FROM tiangolo/uvicorn-gunicorn:python3.9
 
 COPY ./app /app
 ```
@@ -116,7 +119,7 @@ Let's say you have a project managed with [Poetry](https://python-poetry.org/), 
 Then you could have a `Dockerfile` like:
 
 ```Dockerfile
-FROM tiangolo/uvicorn-gunicorn:python3.7
+FROM tiangolo/uvicorn-gunicorn:python3.9
 
 # Install Poetry
 RUN curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | POETRY_HOME=/opt/poetry python && \
@@ -573,6 +576,10 @@ All the image tags, configurations, environment variables and application option
 
 ### Latest Changes
 
+* ✏️ Fix typo duplicate "Note" in Readme. PR [#92](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/92) by [@tiangolo](https://github.com/tiangolo).
+* 📌 Add external dependencies and Dependabot to get automatic upgrade PRs. PR [#84](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/84) by [@tiangolo](https://github.com/tiangolo).
+* 👷 Update Latest Changes. PR [#83](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/83) by [@tiangolo](https://github.com/tiangolo).
+* ✨ Add Python 3.9 and Alpine Python 3.9. PR [#52](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/52) by [@graue70](https://github.com/graue70).
 * 🔥 Remove unused Travis and old GitHub Actions configs. PR [#56](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/56) by [@tiangolo](https://github.com/tiangolo).
 * ✏️ Fix typo (type annotation) in tests. PR [#55](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/55) by [@tiangolo](https://github.com/tiangolo).
 * 👷 Add GitHub Action latest-changes, update issue-manager, add funding. PR [#53](https://github.com/tiangolo/uvicorn-gunicorn-docker/pull/53) by [@tiangolo](https://github.com/tiangolo).
